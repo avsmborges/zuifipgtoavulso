@@ -15,7 +15,6 @@ sap.ui.define(
                         this._innerTable.refreshRows();
                         this._table.rebindTable();
                         this._table.rebind();
-
                     }
                 }.bind(this))
 
