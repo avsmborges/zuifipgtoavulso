@@ -1,0 +1,182 @@
+{
+    "_version": "1.28.0",
+    "sap.app": {
+        "id": "dellavolpe.com.br.zuifipgtoavulso",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.9.2",
+            "toolsId": "932e0913-fd0d-4629-a531-5ac683555468"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata4/sap/zgw_pagamento_avulso/srvd/sap/zui_pagamento_avulso/0001/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "annotations": [
+                        "annotation"
+                    ],
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.84.23",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ListReport.ListReportController": {
+                        "controllerName": "dellavolpe.com.br.zuifipgtoavulso.custom.ListReportExtController"
+                    }
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "dellavolpe.com.br.zuifipgtoavulso.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "PagamentoAvulsoList",
+                    "target": "PagamentoAvulsoList"
+                }
+            ],
+            "targets": {
+                "PagamentoAvulsoList": {
+                    "type": "Component",
+                    "id": "PagamentoAvulsoList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "PagamentoAvulso",
+                            "variantManagement": "Page",
+                            "navigation": {},
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "selectionMode": "Single",
+                                        "type": "GridTable"
+                                    },
+                                    "columns": {
+                                        "DataField::Status": {
+                                            "width": "70px"
+                                        },
+                                        "DataField::Ebeln": {
+                                            "width": "180px"
+                                        },
+                                        "DataField::Lifnr": {
+                                            "width": "280px"
+                                        },
+                                        "DataField::Gjahr": {
+                                            "width": "80px"
+                                        },
+                                        "DataField::HBudat": {
+                                            "width": "150px"
+                                        },
+                                        "DataField::HBlart": {
+                                            "width": "200px"
+                                        },
+                                        "DataField::MeioPagtoTxt": {
+                                            "width": "120px"
+                                        },
+                                        "DataField::Wrbtr": {
+                                            "width": "140px"
+                                        },
+                                        "DataField::BelnrPgto": {
+                                            "width": "100px"
+                                        },
+                                        "DataField::BelnrPgto2": {
+                                            "width": "100px"
+                                        },
+                                        "DataField::Bldat": {
+                                            "width": "145px"
+                                        },
+                                        "DataField::Sgtxt": {
+                                            "width": "250px"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    }
+}

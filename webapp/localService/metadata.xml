@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='S4ALIAS')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zui_pagamento_avulso.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="PagamentoAvulsoType">
+                <Key>
+                    <PropertyRef Name="Bukrs"/>
+                    <PropertyRef Name="Belnr"/>
+                    <PropertyRef Name="Gjahr"/>
+                    <PropertyRef Name="Buzei"/>
+                    <PropertyRef Name="Ebeln"/>
+                    <PropertyRef Name="Bupla"/>
+                </Key>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Buzei" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Bupla" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="BelnrPgto" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="BelnrPgto2" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Bldat" Type="Edm.Date"/>
+                <Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Dmbtr" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Wrbtr" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Kzbtr" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="HBudat" Type="Edm.Date"/>
+                <Property Name="HBlart" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Sgtxt" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Saknr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Hkont" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Filkd" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Hzuon" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Zfbdt" Type="Edm.Date"/>
+                <Property Name="HWaers" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="augbl" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="7"/>
+                <Property Name="Znamelifnr" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="BlartTxt" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="MeioPagto" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="MeioPagtoTxt" Type="Edm.String" Nullable="false" MaxLength="82"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.PagamentoAvulsoOperationControl"/>
+            </EntityType>
+            <EntityType Name="BlartVHType">
+                <Key>
+                    <PropertyRef Name="DomainValue"/>
+                </Key>
+                <Property Name="DomainValue" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="DomainText" Type="Edm.String" Nullable="false" MaxLength="20"/>
+            </EntityType>
+            <ComplexType Name="PagamentoAvulsoOperationControl">
+                <Property Name="meio_pagto" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Pagamento" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <Action Name="meio_pagto" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.PagamentoAvulsoType" Nullable="false"/>
+                <Parameter Name="meio_pagto" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Parameter Name="cheque" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Parameter Name="chequevisible" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.PagamentoAvulsoType" Nullable="false"/>
+            </Action>
+            <Action Name="Pagamento" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.PagamentoAvulsoType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.PagamentoAvulsoType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="BlartVH" EntityType="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.BlartVHType"/>
+                <EntitySet Name="PagamentoAvulso" EntityType="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.PagamentoAvulsoType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Bukrs">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Empresa"/>
+                <Annotation Term="SAP__common.Heading" String="Empr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Belnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Nº documento"/>
+                <Annotation Term="SAP__common.Heading" String="Nº doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de um documento contábil"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Gjahr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Exercício"/>
+                <Annotation Term="SAP__common.Heading" String="Ano"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Buzei">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Item"/>
+                <Annotation Term="SAP__common.Heading" String="Itm"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº linha de lançamento no documento contábil"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Ebeln">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Documento de compras"/>
+                <Annotation Term="SAP__common.Heading" String="Doc.compra"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº do documento de compras"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Bupla">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_fi_filias_usuario_vh/0001;ps='srvd-zui_pagamento_avulso-0001';va='com.sap.gateway.srvd.zui_pagamento_avulso.v0001.et-zi_pagamento_avulso.bupla'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Loc.negócios"/>
+                <Annotation Term="SAP__common.Heading" String="LNeg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Local de negócios"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/BelnrPgto">
+                <Annotation Term="SAP__common.Label" String="Pgto 1"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Nº doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de um documento contábil"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/BelnrPgto2">
+                <Annotation Term="SAP__common.Label" String="Pgto 2"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Nº doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de um documento contábil"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Lifnr">
+                <Annotation Term="SAP__common.Text" Path="Znamelifnr"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Fornecedor"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº conta do fornecedor"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Dmbtr">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="HWaers"/>
+                <Annotation Term="SAP__common.Label" String="Montante em MI"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Montante em moeda interna"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Wrbtr">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="HWaers"/>
+                <Annotation Term="SAP__common.Label" String="Montante"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Montante em moeda do documento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Kzbtr">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="HWaers"/>
+                <Annotation Term="SAP__common.Label" String="Redução original"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Montante original de redução em moeda interna"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/HBlart">
+                <Annotation Term="SAP__common.Text" Path="BlartTxt"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_fi_blart_avulso_vh/0001;ps='srvd-zui_pagamento_avulso-0001';va='com.sap.gateway.srvd.zui_pagamento_avulso.v0001.et-zi_pagamento_avulso.hblart'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Tipo de documento"/>
+                <Annotation Term="SAP__common.Heading" String="Tp.doc."/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Saknr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Conta do Razão"/>
+                <Annotation Term="SAP__common.Heading" String="Cta.Razão"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº conta do Razão"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Hkont">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Conta do Razão"/>
+                <Annotation Term="SAP__common.Heading" String="Razão"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Conta do Razão da contabilidade geral"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Kunnr">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Cliente"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº cliente"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Filkd">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Conta da filial"/>
+                <Annotation Term="SAP__common.Heading" String="Filial"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº conta da filial"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/augbl">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Doc.compensação"/>
+                <Annotation Term="SAP__common.Heading" String="DocCompens"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº documento de compensação"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Status">
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/MeioPagto">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Meio de pagamento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/MeioPagtoTxt">
+                <Annotation Term="SAP__common.Label" String="Meio Pgto"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+            </Annotations>
+            <Annotations Target="SAP__self.meio_pagto(SAP__self.PagamentoAvulsoType)/meio_pagto">
+                <Annotation Term="SAP__common.Label" String="Meio de Pagamento"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_fi_vf_pagamento_opc_meio2/0001;ps='srvd-zui_pagamento_avulso-0001';va='com.sap.gateway.srvd.zui_pagamento_avulso.v0001.ae-zi_pagamento_avulso.meio_pagto.meio_pagto.PagamentoAvulsoType.'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="SAP__self.meio_pagto(SAP__self.PagamentoAvulsoType)/cheque">
+                <Annotation Term="SAP__common.Label" String="Número do Cheque"/>
+                <Annotation Term="SAP__UI.Hidden" Path="chequevisible"/>
+            </Annotations>
+            <Annotations Target="SAP__self.meio_pagto(SAP__self.PagamentoAvulsoType)/chequevisible">
+                <Annotation Term="SAP__UI.ParameterDefaultValue">
+                    <Annotation Term="SAP__core.Messages">
+                        <Collection>
+                            <Record>
+                                <PropertyValue Property="code" String="SADL_GW_EXP_VOCAN-001"/>
+                                <PropertyValue Property="message" String="Property 'X' of annotation 'CONSUMPTION.DEFAULTVALUE' in proj./view 'ZI_FI_VF_PAGAMENTO_OPCOES_MEIO' not found"/>
+                                <PropertyValue Property="severity" String="error"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                </Annotation>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.meio_pagto(SAP__self.PagamentoAvulsoType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/meio_pagto"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Pagamento(SAP__self.PagamentoAvulsoType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Pagamento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType">
+                <Annotation Term="SAP__common.Label" String="Pagamento Avulso"/>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Pagamento Avulso"/>
+                        <PropertyValue Property="TypeNamePlural" String="Pagamentos Avulsos"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Status"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Ebeln"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Lifnr"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Gjahr"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="HBudat"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="HBlart"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="MeioPagtoTxt"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Wrbtr"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BelnrPgto"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BelnrPgto2"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Bldat"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Sgtxt"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Meio de Pagamento"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.meio_pagto"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Pagamento"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zui_pagamento_avulso.v0001.Pagamento"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Bupla</PropertyPath>
+                        <PropertyPath>Ebeln</PropertyPath>
+                        <PropertyPath>Lifnr</PropertyPath>
+                        <PropertyPath>HBudat</PropertyPath>
+                        <PropertyPath>HBlart</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/PagamentoAvulso">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="HBlart"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.BlartVHType/DomainValue">
+                <Annotation Term="SAP__common.Text" Path="DomainText"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tipo de documento"/>
+                <Annotation Term="SAP__common.Heading" String="Tp.doc."/>
+            </Annotations>
+            <Annotations Target="SAP__self.BlartVHType">
+                <Annotation Term="SAP__common.Label" String="Search Help BLART para Pagamento Avulso"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/BlartVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DomainValue"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/HWaers">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Moeda"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Código da moeda"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Znamelifnr">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Nome"/>
+                <Annotation Term="SAP__common.Heading" String="Nome 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nome 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/BlartTxt">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Denominação"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Denominação do tipo de documento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Bldat">
+                <Annotation Term="SAP__common.Label" String="Data do documento"/>
+                <Annotation Term="SAP__common.Heading" String="Data doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data no documento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/HBudat">
+                <Annotation Term="SAP__common.Label" String="Data de lançamento"/>
+                <Annotation Term="SAP__common.Heading" String="Dt.lçto."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data de lançamento no documento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Sgtxt">
+                <Annotation Term="SAP__common.Label" String="Texto"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Texto do item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Hzuon">
+                <Annotation Term="SAP__common.Label" String="Atribuiç.RzE"/>
+                <Annotation Term="SAP__common.Heading" String="Atribuiç.Razão Esp."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nº atribuição para contas do Razão Especial"/>
+            </Annotations>
+            <Annotations Target="SAP__self.PagamentoAvulsoType/Zfbdt">
+                <Annotation Term="SAP__common.Label" String="Dt.base prazo pgto."/>
+                <Annotation Term="SAP__common.Heading" String="Data base"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data base para cálculo do vencimento"/>
+            </Annotations>
+            <Annotations Target="SAP__self.BlartVHType/DomainText">
+                <Annotation Term="SAP__common.Label" String="Denominação"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Denominação do tipo de documento"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
